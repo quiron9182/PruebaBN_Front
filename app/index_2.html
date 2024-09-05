@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Estilos personalizados */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+        }
+        header nav {
+            background-color: transparent;
+            box-shadow: none;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .main-content {
+            flex: 1;
+        }
+        footer {
+            padding: 20px 0;
+        }
+        footer a {
+            color: white;
+        }
+        .social-icons i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="container">
+            <div class="row valign-wrapper">
+                <div class="col s6 logo">
+                    <a href="#" class="brand-logo">MiSitio</a>
+                </div>
+                <div class="col s6">
+                    <nav>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cuerpo principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Carrusel de imágenes -->
+            <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#"><img src="https://via.placeholder.com/800x300/FF5733/ffffff?text=Imagen+1"></a>
+                <a class="carousel-item" href="#"><img src="https://via.placeholder.com/800x300/33FF57/ffffff?text=Imagen+2"></a>
+                <a class="carousel-item" href="#"><img src="https://via.placeholder.com/800x300/3357FF/ffffff?text=Imagen+3"></a>
+            </div>
+
+            <!-- Sección con tarjetas -->
+            <div class="section">
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x200/FF5733/ffffff?text=Tarjeta+1">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Tarjeta 1</span>
+                                <p>Esta es la descripción de la primera tarjeta. Aquí puedes presentar información relevante.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x200/33FF57/ffffff?text=Tarjeta+2">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Tarjeta 2</span>
+                                <p>Esta es la descripción de la segunda tarjeta. Puedes personalizarla según tu necesidad.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="https://via.placeholder.com/300x200/3357FF/ffffff?text=Tarjeta+3">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">Tarjeta 3</span>
+                                <p>Esta es la descripción de la tercera tarjeta, donde puedes incluir información adicional.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#">Leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6">
+                    <h5>Redes Sociales</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="material-icons">facebook</i></a>
+                        <a href="#"><i class="material-icons">twitter</i></a>
+                        <a href="#"><i class="material-icons">instagram</i></a>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <h5>Suscríbete a nuestro boletín</h5>
+                    <form>
+                        <div class="input-field">
+                            <input type="email" id="email" class="validate" required>
+                            <label for="email">Correo Electrónico</label>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Inicialización del carrusel
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+                indicators: true
+            });
+
+            // Cambio automático cada 5 segundos
+            setInterval(function() {
+                $('.carousel').carousel('next');
+            }, 5000); // 5000 ms = 5 segundos
+
+            // Función para navegar manualmente con los indicadores
+            $('.carousel').carousel({
+                onCycleTo: function(item) {
+                    // Puedes realizar alguna acción cuando cambie de imagen
+                }
+            });
+        });
+    </script>
+</body>
+</html>
